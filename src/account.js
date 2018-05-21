@@ -17,14 +17,14 @@
       return this._history
     },
 
-    deposit: function(amount, date){
+    deposit: function(amount, date = new Date()){
       this._balance += amount
       this._history.push(
         [date, amount, '', this._balance]
       );
     },
 
-    withdraw: function(amount, date){
+    withdraw: function(amount, date = new Date()){
       this._balance -= amount
       this._history.push(
         [date, '', amount, this._balance]
