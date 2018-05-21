@@ -25,7 +25,7 @@ date || credit || debit || balance
 
 ## My Approach
 
-**Language:** Javascript
+**Language:** JavaScript
 
 **Testing framework:** Jasmine
 
@@ -40,3 +40,22 @@ date || credit || debit || balance
 - Write Statement print function ➞ pass the test
 - Write the test ➞ Account print statement function
 - Write Account print statement function ➞ pass the test
+
+## Setup
+
+- Clone this repo, run:
+`git clone https://github.com/shihhanwang/bank_tech_test.git`
+
+## Usage
+
+- Interact code via JavaScript console, ex:
+```javascript
+var account = new Account();
+account.deposit(5000);
+account.withdraw(600);
+account.printStatement();
+```
+
+## Test
+
+- Open `SpecRunner.html` in browser
