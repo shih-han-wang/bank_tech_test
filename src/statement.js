@@ -8,6 +8,10 @@
 
   Statement.prototype = {
 
+    print: function(){
+     console.log(this._headline() + this._historyTable())
+    },
+
     _headline: function(){
       return 'date || credit || debit || balance'
     },
@@ -18,10 +22,6 @@
         output += ( "\n" + `${history[0]} || ${history[1]} || ${history[2]} || ${history[3]}` )
       })
       return output
-    },
-
-    print: function(){
-     console.log(this._headline() + this._historyTable())
     }
 
   };

@@ -27,6 +27,11 @@
       this._historyUpdate('w', amount, date)
     },
 
+    printStatement: function(){
+      var statement = new Statement(this._history)
+      return statement.print()
+    },
+
     _historyUpdate: function(action, amount, date){
       if(action === 'd'){
         this._history.push(
