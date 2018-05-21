@@ -22,6 +22,13 @@
       this._history.push(
         [date, amount, '', this._balance]
       );
+    },
+
+    withdraw: function(amount, date){
+      this._balance -= amount
+      this._history.push(
+        [date, '', amount, this._balance]
+      );
     }
 
   };
