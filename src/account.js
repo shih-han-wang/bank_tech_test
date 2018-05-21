@@ -19,16 +19,24 @@
 
     deposit: function(amount, date = new Date()){
       this._balance += amount
-      this._history.push(
-        [date, amount, '', this._balance]
-      );
+      this._historyUpdate('d', amount, date)
     },
 
     withdraw: function(amount, date = new Date()){
       this._balance -= amount
-      this._history.push(
-        [date, '', amount, this._balance]
-      );
+      this._historyUpdate('w', amount, date)
+    },
+
+    _historyUpdate: function(action, amount, date){
+      if(action === 'd'){
+        this._history.push(
+          [date, amount, '', this._balance]
+        );
+      }else if(action === 'w'){
+        this._history.push(
+          [date, '', amount, this._balance]
+        );
+      };
     }
 
   };
