@@ -3,13 +3,25 @@
 (function(exports){
 
   function Account(INITIAL_BALAMCE = 0){
-    this._balance = INITIAL_BALAMCE
+    this._balance = INITIAL_BALAMCE;
+    this._history = [];
   };
 
   Account.prototype = {
 
     balance: function(){
       return this._balance
+    },
+
+    history: function(){
+      return this._history
+    },
+
+    deposit: function(amount, date){
+      this._balance += amount
+      this._history.push(
+        [date, amount, '', this._balance]
+      );
     }
 
   };
