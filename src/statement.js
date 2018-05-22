@@ -2,26 +2,26 @@
 
 (function(exports){
 
-  function Statement(history){
-    this._history = history.reverse();
+  function Statement(history = new History()){
+    this._history = history;
   };
 
   Statement.prototype = {
 
+    addTransaction: function(action, amount, balance, date){
+      this._history.add(action, amount, balance, date)
+    },
+
     print: function(){
-     console.log(this._headline() + this._historyTable())
-    },
-
-    _headline: function(){
-      return 'date || credit || debit || balance'
-    },
-
-    _historyTable: function(){
-      var output = '';
-      this._history.forEach(function(history){
-        output += ( "\n" + `${history[0]} || ${history[1]} || ${history[2]} || ${history[3]}` )
-      })
-      return output
+      var display = 'date || credit || debit || balance'
+      this._history._transactions.forEach(function(t){
+        if (t._action === 'd'){
+          display += ( "\n" + `${t._date} || ${t._amount} ||  || ${t._balance}` )
+        }else if(t._action === 'w'){
+          display += ( "\n" + `${t._date} ||  || ${t._amount} || ${t._balance}` )
+        }
+      });
+      return display;
     }
 
   };
