@@ -3,42 +3,20 @@
 describe('Statement', function(){
 
   var statement;
-  var fakeHistory = [
-    ['10/01/2012', 1000,'',1000 ],
-    ['12/01/2012', 1000,'',2000 ],
-    ['14/01/2012', '', 500, 1500]
-  ];
 
   beforeEach(function(){
-    statement = new Statement(fakeHistory);
-  });
-
-  describe('headline', function(){
-    it('return statement headline', function(){
-      expect(statement._headline()).toEqual('date || credit || debit || balance');
-    });
-  });
-
-  describe('historyTable', function(){
-    it('return statement history table', function(){
-      var expectOutput =
-      "\n" + '14/01/2012 ||  || 500 || 1500' +
-      "\n" + '12/01/2012 || 1000 ||  || 2000' +
-      "\n" + '10/01/2012 || 1000 ||  || 1000'
-      expect(statement._historyTable()).toEqual(expectOutput);
-    });
+    statement = new Statement();
   });
 
   describe('print', function(){
-    it('print statement', function(){
-      spyOn(console, 'log');;
+    it('add transaction into history', function(){
+      statement.addTransaction('d', 1000, 1000, '02/02/2022')
+      statement.addTransaction('w', 500, 500, '03/02/2022')
       var expectOutput =
-      'date || credit || debit || balance' + "\n" +
-      '14/01/2012 ||  || 500 || 1500' + "\n" +
-      '12/01/2012 || 1000 ||  || 2000' + "\n" +
-      '10/01/2012 || 1000 ||  || 1000'
-      statement.print();
-      expect(console.log).toHaveBeenCalledWith(expectOutput);
+        'date || credit || debit || balance' + "\n" +
+        '03/02/2022 ||  || 500 || 500' + "\n" +
+        '02/02/2022 || 1000 ||  || 1000'
+      expect(statement.print()).toEqual(expectOutput);
     });
   });
 
