@@ -2,9 +2,9 @@
 
 (function(exports){
 
-  function Account(INITIAL_BALAMCE = 0){
+  function Account(INITIAL_BALAMCE = 0, statement = new Statement()){
     this._balance = INITIAL_BALAMCE;
-    this._history = [];
+    this._statement = statement;
   };
 
   Account.prototype = {
@@ -13,35 +13,18 @@
       return this._balance
     },
 
-    history: function(){
-      return this._history
-    },
-
     deposit: function(amount, date = new Date()){
-      this._balance += amount
-      this._historyUpdate('d', amount, date)
+      this._balance += amount;
+      this._statement.addTransaction("d", amount, this._balance, date);
     },
 
     withdraw: function(amount, date = new Date()){
-      this._balance -= amount
-      this._historyUpdate('w', amount, date)
+      this._balance -= amount;
+      this._statement.addTransaction("w", amount, this._balance, date);
     },
 
     printStatement: function(){
-      var statement = new Statement(this._history)
-      return statement.print()
-    },
-
-    _historyUpdate: function(action, amount, date){
-      if(action === 'd'){
-        this._history.push(
-          [date, amount, '', this._balance]
-        );
-      }else if(action === 'w'){
-        this._history.push(
-          [date, '', amount, this._balance]
-        );
-      };
+      console.log(this._statement.print());
     }
 
   };
