@@ -1,5 +1,5 @@
 # Bank tech test
-![jasmine_and_console](https://user-images.githubusercontent.com/36331920/40311680-83fbddb2-5d08-11e8-93ae-d6f4374b005c.png)
+<img width="1390" alt="jasmine_and_console_2" src="https://user-images.githubusercontent.com/36331920/40375681-26b337a4-5de4-11e8-8748-36c51c3455d3.png">
 
 ## Specification
 
@@ -29,6 +29,7 @@ date || credit || debit || balance
 
 **Testing framework:** Jasmine
 
+First day:
 - Write the test ➞ Account balance function
 - Write Account balance function ➞ pass the test
 - Write the test ➞ Account deposit & history function
@@ -41,6 +42,15 @@ date || credit || debit || balance
 - Write the test ➞ Account print statement function
 - Write Account print statement function ➞ pass the test
 
+Second day(another aproach):
+- Write the test ➞ Transaction stores the action & amount & balance & date
+- Write Transaction stores the objects ➞ pass the test
+- Write the test ➞ transaction History add(transaction) function
+- Write  History add function ➞ pass the test
+- Write the test ➞ Statement print & add transaction functions
+- Write Statement print & add transaction functions ➞ pass the test
+- Write the test ➞ Account deposit & withdraw & print statement
+- Write Account deposit & withdraw & print statement ➞ pass the test
 ## Setup
 
 - Clone this repo, run:
