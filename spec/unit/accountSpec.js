@@ -53,5 +53,5 @@ describe('Account', function(){
       expect(console.log).toHaveBeenCalled();
     });
   });
-  
+
 });
