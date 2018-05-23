@@ -23,8 +23,8 @@ describe('Statement', function(){
     it('add transaction into history', function(){
       var expectOutput =
         'date || credit || debit || balance' + "\n" +
-        '03/02/2022 ||  || 500 || 500' + "\n" +
-        '02/02/2022 || 1000 ||  || 1000'
+        '03/02/2022 ||  || 500.00 || 500.00' + "\n" +
+        '02/02/2022 || 1000.00 ||  || 1000.00'
       expect(statement(fakeTransactions)).toEqual(expectOutput);
     });
   });
