@@ -1,5 +1,6 @@
 # Bank tech test
-<img width="1390" alt="jasmine_and_console_2" src="https://user-images.githubusercontent.com/36331920/40375681-26b337a4-5de4-11e8-8748-36c51c3455d3.png">
+![jasmine_and_console_3](https://user-images.githubusercontent.com/36331920/40427963-144d427c-5e97-11e8-8b44-15f9a5fa957c.png)
+
 
 ## Specification
 
